@@ -9,7 +9,7 @@ if [[ $UID != 0 ]]; then
 fi
 
 cd /usr/bin
-curl -L https://github.com/kubernetes/kompose/releases/download/v1.26.0/kompose-linux-amd64 -o kompose
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.26.1/kompose-linux-amd64 -o kompose
 chmod +x kompose
 
 
