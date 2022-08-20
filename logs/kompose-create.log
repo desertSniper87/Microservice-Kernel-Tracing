@@ -1,0 +1,87 @@
+torsho@torsho-ThinkPad-L480:~/showerPoc/DeathStarBench/socialNetwork/kube-services$ kubectl apply -f .
+persistentvolumeclaim/compose-post-service-claim0 created
+deployment.apps/compose-post-service created
+deployment.apps/home-timeline-redis created
+persistentvolumeclaim/home-timeline-service-claim0 created
+deployment.apps/home-timeline-service created
+deployment.apps/jaeger-agent created
+service/jaeger-agent created
+persistentvolumeclaim/media-frontend-claim0 created
+persistentvolumeclaim/media-frontend-claim1 created
+deployment.apps/media-frontend created
+service/media-frontend created
+deployment.apps/media-memcached created
+deployment.apps/media-mongodb created
+persistentvolumeclaim/media-service-claim0 created
+deployment.apps/media-service created
+persistentvolumeclaim/nginx-thrift-claim0 created
+persistentvolumeclaim/nginx-thrift-claim1 created
+persistentvolumeclaim/nginx-thrift-claim2 created
+persistentvolumeclaim/nginx-thrift-claim3 created
+persistentvolumeclaim/nginx-thrift-claim4 created
+persistentvolumeclaim/nginx-thrift-claim5 created
+deployment.apps/nginx-thrift created
+service/nginx-thrift created
+deployment.apps/post-storage-memcached created
+deployment.apps/post-storage-mongodb created
+persistentvolumeclaim/post-storage-service-claim0 created
+deployment.apps/post-storage-service created
+service/post-storage-service created
+deployment.apps/social-graph-mongodb created
+deployment.apps/social-graph-redis created
+persistentvolumeclaim/social-graph-service-claim0 created
+deployment.apps/social-graph-service created
+persistentvolumeclaim/text-service-claim0 created
+deployment.apps/text-service created
+persistentvolumeclaim/unique-id-service-claim0 created
+deployment.apps/unique-id-service created
+deployment.apps/url-shorten-memcached created
+error when creating "url-shorten-mongodb-deployment.yaml": Post "https://127.0.0.1:16443/apis/apps/v1/namespaces/default/deployments?fieldManager=kubectl-client-side-apply&fieldValidation=Strict": unexpected EOF
+error when retrieving current configuration of:
+Resource: "/v1, Resource=persistentvolumeclaims", GroupVersionKind: "/v1, Kind=PersistentVolumeClaim"
+Name: "url-shorten-service-claim0", Namespace: "default"
+from server for: "url-shorten-service-claim0-persistentvolumeclaim.yaml": Get "https://127.0.0.1:16443/api/v1/namespaces/default/persistentvolumeclaims/url-shorten-service-claim0": dial tcp 127.0.0.1:16443: connect: connection refused - error from a previous attempt: read tcp 127.0.0.1:59622->127.0.0.1:16443: read: connection reset by peer
+error when retrieving current configuration of:
+Resource: "apps/v1, Resource=deployments", GroupVersionKind: "apps/v1, Kind=Deployment"
+Name: "url-shorten-service", Namespace: "default"
+from server for: "url-shorten-service-deployment.yaml": Get "https://127.0.0.1:16443/apis/apps/v1/namespaces/default/deployments/url-shorten-service": dial tcp 127.0.0.1:16443: connect: connection refused
+error when retrieving current configuration of:
+Resource: "apps/v1, Resource=deployments", GroupVersionKind: "apps/v1, Kind=Deployment"
+Name: "user-memcached", Namespace: "default"
+from server for: "user-memcached-deployment.yaml": Get "https://127.0.0.1:16443/apis/apps/v1/namespaces/default/deployments/user-memcached": dial tcp 127.0.0.1:16443: connect: connection refused
+error when retrieving current configuration of:
+Resource: "/v1, Resource=persistentvolumeclaims", GroupVersionKind: "/v1, Kind=PersistentVolumeClaim"
+Name: "user-mention-service-claim0", Namespace: "default"
+from server for: "user-mention-service-claim0-persistentvolumeclaim.yaml": Get "https://127.0.0.1:16443/api/v1/namespaces/default/persistentvolumeclaims/user-mention-service-claim0": dial tcp 127.0.0.1:16443: connect: connection refused
+error when retrieving current configuration of:
+Resource: "apps/v1, Resource=deployments", GroupVersionKind: "apps/v1, Kind=Deployment"
+Name: "user-mention-service", Namespace: "default"
+from server for: "user-mention-service-deployment.yaml": Get "https://127.0.0.1:16443/apis/apps/v1/namespaces/default/deployments/user-mention-service": dial tcp 127.0.0.1:16443: connect: connection refused
+error when retrieving current configuration of:
+Resource: "apps/v1, Resource=deployments", GroupVersionKind: "apps/v1, Kind=Deployment"
+Name: "user-mongodb", Namespace: "default"
+from server for: "user-mongodb-deployment.yaml": Get "https://127.0.0.1:16443/apis/apps/v1/namespaces/default/deployments/user-mongodb": dial tcp 127.0.0.1:16443: connect: connection refused
+error when retrieving current configuration of:
+Resource: "/v1, Resource=persistentvolumeclaims", GroupVersionKind: "/v1, Kind=PersistentVolumeClaim"
+Name: "user-service-claim0", Namespace: "default"
+from server for: "user-service-claim0-persistentvolumeclaim.yaml": Get "https://127.0.0.1:16443/api/v1/namespaces/default/persistentvolumeclaims/user-service-claim0": dial tcp 127.0.0.1:16443: connect: connection refused
+error when retrieving current configuration of:
+Resource: "apps/v1, Resource=deployments", GroupVersionKind: "apps/v1, Kind=Deployment"
+Name: "user-service", Namespace: "default"
+from server for: "user-service-deployment.yaml": Get "https://127.0.0.1:16443/apis/apps/v1/namespaces/default/deployments/user-service": dial tcp 127.0.0.1:16443: connect: connection refused
+error when retrieving current configuration of:
+Resource: "apps/v1, Resource=deployments", GroupVersionKind: "apps/v1, Kind=Deployment"
+Name: "user-timeline-mongodb", Namespace: "default"
+from server for: "user-timeline-mongodb-deployment.yaml": Get "https://127.0.0.1:16443/apis/apps/v1/namespaces/default/deployments/user-timeline-mongodb": dial tcp 127.0.0.1:16443: connect: connection refused
+error when retrieving current configuration of:
+Resource: "apps/v1, Resource=deployments", GroupVersionKind: "apps/v1, Kind=Deployment"
+Name: "user-timeline-redis", Namespace: "default"
+from server for: "user-timeline-redis-deployment.yaml": Get "https://127.0.0.1:16443/apis/apps/v1/namespaces/default/deployments/user-timeline-redis": dial tcp 127.0.0.1:16443: connect: connection refused
+error when retrieving current configuration of:
+Resource: "/v1, Resource=persistentvolumeclaims", GroupVersionKind: "/v1, Kind=PersistentVolumeClaim"
+Name: "user-timeline-service-claim0", Namespace: "default"
+from server for: "user-timeline-service-claim0-persistentvolumeclaim.yaml": Get "https://127.0.0.1:16443/api/v1/namespaces/default/persistentvolumeclaims/user-timeline-service-claim0": dial tcp 127.0.0.1:16443: connect: connection refused
+error when retrieving current configuration of:
+Resource: "apps/v1, Resource=deployments", GroupVersionKind: "apps/v1, Kind=Deployment"
+Name: "user-timeline-service", Namespace: "default"
+from server for: "user-timeline-service-deployment.yaml": Get "https://127.0.0.1:16443/apis/apps/v1/namespaces/default/deployments/user-timeline-service": dial tcp 127.0.0.1:16443: connect: connection refused

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: compose-post-service
+  name: compose-post-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: compose-post-service
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yml
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: compose-post-service
+    spec:
+      containers:
+        - command:
+            - ComposePostService
+          image: deathstarbench/social-network-microservices:latest
+          name: compose-post-service
+          resources: {}
+          volumeMounts:
+            - mountPath: /social-network-microservices/config
+              name: compose-post-service-claim0
+      hostname: compose-post-service
+      restartPolicy: Always
+      volumes:
+        - name: compose-post-service-claim0
+          persistentVolumeClaim:
+            claimName: compose-post-service-claim0
+status: {}

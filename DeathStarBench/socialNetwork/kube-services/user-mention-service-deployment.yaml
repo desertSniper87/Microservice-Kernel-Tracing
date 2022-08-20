@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: user-mention-service
+  name: user-mention-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: user-mention-service
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yml
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: user-mention-service
+    spec:
+      containers:
+        - command:
+            - UserMentionService
+          image: deathstarbench/social-network-microservices:latest
+          name: user-mention-service
+          resources: {}
+          volumeMounts:
+            - mountPath: /social-network-microservices/config
+              name: user-mention-service-claim0
+      hostname: user-mention-service
+      restartPolicy: Always
+      volumes:
+        - name: user-mention-service-claim0
+          persistentVolumeClaim:
+            claimName: user-mention-service-claim0
+status: {}

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: url-shorten-service
+  name: url-shorten-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: url-shorten-service
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yml
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: url-shorten-service
+    spec:
+      containers:
+        - command:
+            - UrlShortenService
+          image: deathstarbench/social-network-microservices:latest
+          name: url-shorten-service
+          resources: {}
+          volumeMounts:
+            - mountPath: /social-network-microservices/config
+              name: url-shorten-service-claim0
+      hostname: url-shorten-service
+      restartPolicy: Always
+      volumes:
+        - name: url-shorten-service-claim0
+          persistentVolumeClaim:
+            claimName: url-shorten-service-claim0
+status: {}
